@@ -44,13 +44,13 @@ class Hs_Bj_City_List_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of the plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -100,4 +100,27 @@ class Hs_Bj_City_List_Public {
 
 	}
 
+	/**
+	 * This function is responsible to display list of states from Benin.
+	 *
+	 * @param array $states
+	 * @return array
+	 */
+	public function load_states( $states ) {
+		$api_obj    = new Hs_Bj_City_List_API();
+		$api_url    = $api_obj->get_api_url( 'benin-states' );
+		$benin_city = $api_obj->get_request_from_api( $api_url );
+		if ( isset( $benin_city->error ) ) {
+			return $states;
+		} elseif ( isset( $benin_city->towns ) ) {
+			foreach ( $benin_city->towns as $city_id => $city_name ) {
+				if ( isset( $city_name->name ) ) {
+					$states['BJ'][ strtolower( $city_name->name ) ] = $city_name->name;
+				}
+			}
+			asort( $states['BJ'] );
+		}
+
+		return $states;
+	}
 }
