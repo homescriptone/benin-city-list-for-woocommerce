@@ -5,7 +5,7 @@
 **Contributor:** __manutheblacker__
 
 
-**Donate link:**  I do not mind a token for ordering Pizza 🥞, so you can <a href="https://www.paypal.com/paypalme/usnhs" target="_blank">__Drop something for your boy 🤓 🥳__</a>
+**Donate link:**  I do not mind a token for ordering Pizza 🥞, so you can <a href="https://buymeacoffee.com/manutheblacker" target="_blank">__Drop something for your boy 🤓 🥳__</a>
 
 **Tags:** benin-republic wc-states woocommerce dropshipping benin-city
 
